@@ -7896,3 +7896,23 @@ msgstr "Evénement"
 #:
 msgid "dd/mm/yyyy"
 msgstr "jj/mm/aaaa"
+
+#:
+msgid "Head of Household"
+msgstr "Chef de famille"
+
+#:
+msgid "Spouse"
+msgstr "Conjoint(e)"
+
+#:
+msgid "Child"
+msgstr "Enfant"
+
+#:
+msgid "Other Relative"
+msgstr "Autre membre de la famille"
+
+#:
+msgid "Non Relative"
+msgstr "N'est pas membre de la famille"
