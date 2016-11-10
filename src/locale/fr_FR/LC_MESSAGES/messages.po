@@ -451,7 +451,7 @@ msgstr "Bas&eacute; sur des filtres ci-dessous.."
 
 #: CSVExport.php:275
 msgid "People in Cart (filters ignored)"
-msgstr "Gens dans le Panier (filtres ignor&eacute;s)"
+msgstr "Personnes dans le Panier (filtres ignor&eacute;s)"
 
 #: CSVExport.php:284 FinancialReports.php:117 PersonEditor.php:1008
 #: PrintView.php:268
@@ -708,7 +708,7 @@ msgstr "Importation de données réussie."
 
 #: CSVImport.php:936
 msgid "persons were imported"
-msgstr "personnes ont été importés"
+msgstr "personnes ont été importées"
 
 #: Canvas05Editor.php:29
 msgid "Canvas 2005 Input for the "
@@ -728,8 +728,7 @@ msgstr "Comment pouvons-nous am&eacute;liorer ?"
 
 #: Canvas05Editor.php:114
 msgid "Will you pledge by March 31?"
-msgstr "Contribuerez-vous avant le 31 mars ?\n"
-""
+msgstr "Contribuerez-vous avant le 31 mars ?"
 
 #: Canvas05Editor.php:119
 msgid "Canvasser Comments:"
@@ -1119,7 +1118,7 @@ msgstr "pré-Trier tranquillement"
 #: CartView.php:284
 #, fuzzy
 msgid "Send Email To People in Cart"
-msgstr "Envoyez Email au gens du Panier"
+msgstr "Envoyez Email aux personnes du Panier"
 
 #: CartView.php:429 EmailEditor.php:67
 msgid "Compose Email"
@@ -1254,7 +1253,7 @@ msgstr "Événement Checkin"
 #: Checkin.php:59
 #, fuzzy
 msgid "Select the event to which you would like to check people in for:"
-msgstr "Sélectionner l'événement auquel vous voudriez enregistrer les gens pour :"
+msgstr "Sélectionner l'événement auquel vous voudriez enregistrer les personnes pour :"
 
 #: Checkin.php:84
 #, fuzzy
@@ -3566,7 +3565,7 @@ msgstr "Fonctions des Membres"
 
 #: MembersDashboard.php:74
 msgid "All People"
-msgstr "Tous les gens"
+msgstr "Toutes les personnes"
 
 #: MembersDashboard.php:76
 msgid "Classifications Manager"
@@ -3607,15 +3606,15 @@ msgstr "Familles"
 
 #: MembersDashboard.php:151 Menu.php:77
 msgid "See all Families"
-msgstr "Voir toutes les Familles"
+msgstr "Plus d'infos"
 
 #: MembersDashboard.php:165 Menu.php:89
 msgid "People"
-msgstr "Gens"
+msgstr "Personnes"
 
 #: MembersDashboard.php:172 Menu.php:96
 msgid "See All People"
-msgstr "Voir toutes les Gens"
+msgstr "Plus d'infos"
 
 #: MembersDashboard.php:186
 msgid "Sunday School Kids"
@@ -3675,7 +3674,7 @@ msgstr "Effectifs"
 
 #: MembersDashboard.php:296
 msgid "People Classification"
-msgstr "Classification des Gens"
+msgstr "Classification des personnes"
 
 #: MembersDashboard.php:329
 msgid "Gender Demographics"
@@ -4305,7 +4304,7 @@ msgstr "Merci de confirmer la suppression de cette Propriété:"
 
 #: PropertyDelete.php:63
 msgid "Deleting this Property will also delete all assignments of this Property to any People, Family, or Group records."
-msgstr "Supprimer cette Propriété entrainera également toute suppression des Propriétés associées aux gens, familles, ou groupes."
+msgstr "Supprimer cette Propriété entrainera également toute suppression des Propriétés associées aux personnes, familles, ou groupes."
 
 #: SelectDelete.php:233 VolunteerOpportunityEditor.php:123
 #: PropertyDelete.php:69 PropertyTypeDelete.php:73
@@ -4653,7 +4652,7 @@ msgstr "Filtre et panier"
 
 #: SelectList.php:467
 msgid "Show people <b>not</b> in this group type:"
-msgstr "Montrer gens <b>non</b> dans ce type de groupe:"
+msgstr "Montrer personnes <b>non</b> dans ce type de groupe:"
 
 #: SelectList.php:483
 msgid "Sort order:"
@@ -5044,7 +5043,7 @@ msgstr "Attention !"
 
 #: VolunteerOpportunityEditor.php:111
 msgid "There are people assigned to this Volunteer Opportunity."
-msgstr "Il ya des gens affectés à cette opportunité de bénévolat."
+msgstr "Il ya des personnes affectées à cette opportunité de bénévolat."
 
 #: VolunteerOpportunityEditor.php:112
 msgid "Volunteer Opportunity will be unassigned for the following people."
@@ -5156,7 +5155,7 @@ msgstr "Tableau de bord eMail"
 
 #: email/MailChimpMissingReport.php:22
 msgid "People not in Mailchimp"
-msgstr "Gens qui ne sont pas dans Mailchimp"
+msgstr "Personnes qui ne sont pas dans Mailchimp"
 
 #: Include/CanvassUtilities.php:70
 msgid "No families need canvassers assigned"
@@ -6080,7 +6079,7 @@ msgstr "Export des enregistrements (CSV)"
 
 #: 
 msgid "People Properties"
-msgstr "Propriétés des gens"
+msgstr "Propriétés des Personnes"
 
 #: 
 msgid "Family Properties"
@@ -6252,8 +6251,7 @@ msgstr "Si vous téléchargez une restauration de Churchinfo, ou d'une version p
 
 #: RestoreDatabase.php:40
 msgid "Upload Files"
-msgstr "Télécharger les fichiers\n"
-""
+msgstr "Télécharger les fichiers"
 
 #: RestoreDatabase.php:47
 msgid "No Restore Running"
@@ -7048,7 +7046,7 @@ msgstr "Recherche personnalisé"
 #: 
 msgctxt "query_qry"
 msgid "Returns each family and the total number of people assigned to them."
-msgstr "Retourne chaque famille et le nombre total des gens assignés."
+msgstr "Retourne chaque famille et le nombre total des personnes assignées."
 
 #: 
 msgctxt "query_qry"
@@ -7068,7 +7066,7 @@ msgstr "Sélectionner les enregistrements de personnes avec un rôle de famille 
 #: 
 msgctxt "query_qry"
 msgid "Returns person records which are assigned the given property."
-msgstr "Retourne les enregistrements de personnes qui ne sont pas assignés à telle propriété"
+msgstr "Retourne les enregistrements de personnes qui ne sont pas assignées à telle propriété"
 
 #: 
 msgctxt "query_qry"
@@ -7078,7 +7076,7 @@ msgstr "Rechercher par toute partie de Nom, Ville, Etat, Code postal, Numéro de
 #: 
 msgctxt "query_qry"
 msgid "People with birthdays in a particular month"
-msgstr "Gens avec la date de naissance dans un mois de particulier"
+msgstr "Personnes avec la date de naissance dans un mois de particulier"
 
 #: 
 msgctxt "query_qry"
@@ -7093,12 +7091,12 @@ msgstr "Membres qui nous ont rejoint à un mois particulier"
 #: 
 msgctxt "query_qry"
 msgid "People who are registered as database users"
-msgstr "Gens qui sont enregistrés dans la base de données utilisateurs"
+msgstr "Personnes qui sont enregistrées dans la base de données utilisateurs"
 
 #: 
 msgctxt "query_qry"
 msgid "People who are members"
-msgstr "Gens qui sont membres"
+msgstr "Personnes qui sont membres"
 
 #: 
 msgctxt "query_qry"
@@ -7113,7 +7111,7 @@ msgstr "Amis qui ont souscrit dans les mois précédents"
 #: 
 msgctxt "query_qry"
 msgid "People in families that are ok to canvass."
-msgstr "Gens des familles qui sont ok pour la campagne"
+msgstr "Personnes des familles qui sont ok pour la campagne"
 
 #: 
 msgctxt "query_qry"
@@ -7123,12 +7121,12 @@ msgstr "Comparer les contributions entre deux années fiscales."
 #: 
 msgctxt "query_qry"
 msgid "Find people who pledged one year but not another"
-msgstr "Rechercher les gens qui ont contribué une année mais pas une autre"
+msgstr "Rechercher les Personnes qui ont contribué une année mais pas une autre"
 
 #: 
 msgctxt "query_qry"
 msgid "People who are configured to pay by credit card."
-msgstr "Gens qui sont configurés pour payer par carte de crédit."
+msgstr "Personnes qui sont configurées pour payer par carte de crédit."
 
 #: 
 msgctxt "query_qry"
@@ -7143,7 +7141,7 @@ msgstr "Rechercher des volontaires pour lesquels sont en relation avec deux code
 #: 
 msgctxt "query_qry"
 msgid "Find people with a custom field value"
-msgstr "Rechercher des gens avec un champ personnalisé"
+msgstr "Rechercher des personnes avec un champ personnalisé"
 
 #: 
 msgctxt "menuconfig_mcf"
@@ -7318,7 +7316,7 @@ msgstr "Propriétés"
 #: 
 msgctxt "menuconfig_mcf"
 msgid "People Properties"
-msgstr "Propriétés des Gens"
+msgstr "Propriétés des Personnes"
 
 #: 
 msgctxt "menuconfig_mcf"
@@ -7781,7 +7779,7 @@ msgstr "Enregistré votre famille"
 
 #: external/templates/registration/family-register.php:49
 msgid "How many people are in your family"
-msgstr "Combien de gens sont dans votre famille"
+msgstr "Combien de personnes sont dans votre famille"
 
 #: external/templates/registration/family-register.php:68
 msgid "This will be my primary church."
@@ -7891,3 +7889,10 @@ msgstr "Total"
 msgid "Visitors"
 msgstr "Visiteurs"
 
+#:
+msgid "Event"
+msgstr "Evénement"
+
+#:
+msgid "dd/mm/yyyy"
+msgstr "jj/mm/aaaa"
