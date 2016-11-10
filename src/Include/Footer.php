@@ -47,7 +47,8 @@
   <script src="<?= $sRootPath ?>/skin/adminlte/plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
   <script src="<?= $sRootPath ?>/skin/adminlte/plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
   <script src="<?= $sRootPath ?>/skin/adminlte/plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
-  <script src="<?= $sRootPath ?>/skin/adminlte/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+	<script src="<?= $sRootPath ?>/skin/adminlte/plugins/datepicker/locales/bootstrap-datepicker.<?= substr($sLanguage,0,2)?>.js" type="text/javascript" charset="UTF-8"></script>
+
 
 
   <script src="<?= $sRootPath ?>/skin/js/DataTables.js"></script>

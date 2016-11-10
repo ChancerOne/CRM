@@ -386,7 +386,7 @@ function FilterInput($sInput, $type = 'string', $size = 1)
         $sInput = mysql_real_escape_string($sInput);
         return $sInput;
       case 'htmltext':
-        $sInput = strip_tags(trim($sInput), '<a><b><i><u><h1><h2><h3><h4><h5><h6>');
+        $sInput = strip_tags(trim($sInput), '<a><b><i><u>');
         if (get_magic_quotes_gpc())
           $sInput = stripslashes($sInput);
         $sInput = mysql_real_escape_string($sInput);
@@ -811,11 +811,24 @@ function ExpandPhoneNumber($sPhoneNumber, $sPhoneCountry, &$bWeird)
   }
 }
 
+
+//
+// Prints age in years, or in months if less than one year old
+//
+function PrintAge($Month, $Day, $Year, $Flags)
+{
+  echo FormatAge($Month, $Day, $Year, $Flags);
+}
+
+//
+// Formats an age string: age in years, or in months if less than one year old
+//
 function FormatAge($Month, $Day, $Year, $Flags)
 {
   if (($Flags & 1)) //||!$_SESSION['bSeePrivacyData']
   {
     return;
+
   }
 
   if ($Year > 0) {
@@ -843,54 +856,6 @@ function FormatAge($Month, $Day, $Year, $Flags)
       return (date("Y") - $Year . " " . gettext("yrs old"));
   } else
     return (gettext("Unknown"));
-}
-
-function BirthDate($year, $month, $day, $hideAge) {
-  if (!is_null($day) && $day != "" &&
-    !is_null($month) && $month != ""
-  ) {
-
-    $birthYear = $year;
-    if ($hideAge) {
-      $birthYear = 1900;
-    }
-
-    return date_create($birthYear . "-" . $month . "-" . $day);
-  }
-
-  return date_create();
-}
-
-//
-// Formats an age suffix: age in years, or in months if less than one year old
-//
-function FormatAgeSuffix($birthDate, $Flags)
-{
-  if ($Flags == 1)
-  {
-    return "";
-  }
-
-  $ageSuffix = gettext("Unknown");
-
-  $now = new DateTime();
-  $age = $now->diff($birthDate);
-
-  if($age->y < 1) {
-    if($age->m > 1) {
-      $ageSuffix = gettext("mos old");
-    } else {
-      $ageSuffix = gettext("mo old");
-    }
-  } else {
-    if($age->y > 1) {
-      $ageSuffix = gettext("yrs old");
-    } else {
-      $ageSuffix = gettext("yr old");
-    }
-  }
-
-  return $ageSuffix;
 }
 
 // Returns a string of a person's full name, formatted as specified by $Style
@@ -1268,6 +1233,66 @@ function assembleYearMonthDay($sYear, $sMonth, $sDay, $pasfut = "future")
     return FALSE;
   }
 
+}
+
+function localizeDate ($data,$locale = "US")
+{
+// This function to transform the date in the right way, frend US format etc ...
+// It's necessary in the field editor
+// Philippe Logel © 2016-07-22
+	//echo $data;
+	if (strlen ($data) == 0)
+		return $data;
+	
+	//echo strpos($data, '-')."   ".$data." coucou ";	
+		
+	if (substr_count($data, '-') == 2)
+	{
+		if (strpos($data, '-') == 4) {
+			//echo "cocou";
+			// Assume format is Y-M-D
+			$iFirstDelimiter = strpos($data, '-');
+			$iSecondDelimiter = strpos($data, '-', $iFirstDelimiter+1);
+
+			// Parse the year.
+			$sYear = substr($data, 0, $iFirstDelimiter);
+
+			// Parse the month
+			$sMonth = substr($data, $iFirstDelimiter+1, $iSecondDelimiter-$iFirstDelimiter-1);
+
+			// Parse the day
+			$sDay = substr($data, $iSecondDelimiter+1);
+
+			// Put into YYYY-MM-DD form
+			if ($locale == "US")
+				return $data;
+		} else if (strpos($data, '-') == 2) {
+			//echo "cocou2";
+			// nous sommes en dates française
+			// Assume format is D-M-Y
+			$iFirstDelimiter = strpos($data, '-');
+			$iSecondDelimiter = strpos($data, '-', $iFirstDelimiter+1);
+
+			// Parse the year.
+			$sDay = substr($data, 0, $iFirstDelimiter);
+
+			// Parse the month
+			$sMonth = substr($data, $iFirstDelimiter+1, $iSecondDelimiter-$iFirstDelimiter-1);
+
+			// Parse the day
+			$sYear = substr($data, $iSecondDelimiter+1);
+		}
+  }
+  
+  if ($locale == "fr" || $locale == "FR")
+  {
+  	//echo $locale."=".$sDay."/".$sMonth."/".$sYear;;
+
+  	return $sDay."/".$sMonth."/".$sYear;
+  }
+  
+  return $data;
+  	
 }
 
 function parseAndValidateDate($data, $locale = "US", $pasfut = "future")
