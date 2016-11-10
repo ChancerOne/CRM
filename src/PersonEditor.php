@@ -198,7 +198,7 @@ if (isset($_POST["PersonSubmit"]) || isset($_POST["PersonSubmitAndAdd"])) {
 
     // Validate Friend Date if one was entered
     if (strlen($dFriendDate) > 0) {
-        $dateString = parseAndValidateDate($dFriendDate, $locale = "US", $pasfut = "past");
+        $dateString = parseAndValidateDate($dFriendDate, $locale = substr($sLanguage,3,2), $pasfut = "past");
         if ($dateString === FALSE) {
             $sFriendDateError = "<span style=\"color: red; \">"
                 . gettext("Not a valid Friend Date") . "</span>";
@@ -210,7 +210,7 @@ if (isset($_POST["PersonSubmit"]) || isset($_POST["PersonSubmitAndAdd"])) {
 
     // Validate Membership Date if one was entered
     if (strlen($dMembershipDate) > 0) {
-        $dateString = parseAndValidateDate($dMembershipDate, $locale = "US", $pasfut = "past");
+        $dateString = parseAndValidateDate($dMembershipDate, $locale = substr($sLanguage,3,2), $pasfut = "past");
         if ($dateString === FALSE) {
             $sMembershipDateError = "<span style=\"color: red; \">"
                 . gettext("Not a valid Membership Date") . "</span>";
@@ -710,7 +710,7 @@ require "Include/Header.php";
                         if ($iFamilyRole == $lst_OptionID) {
                             echo " selected";
                         }
-                        echo ">" . $lst_OptionName . "&nbsp;";
+                        echo ">" . _($lst_OptionName) . "&nbsp;";
                     } ?>
                 </select>
             </div>
@@ -880,8 +880,9 @@ require "Include/Header.php";
                             <i class="fa fa-phone"></i>
                         </div>
                         <input type="text" name="HomePhone"
+                        	<?php echo "toto".$sPhoneFormat; ?>
                                value="<?= htmlentities(stripslashes($sHomePhone), ENT_NOQUOTES, "UTF-8") ?>" size="30"
-                               maxlength="30" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                               maxlength="30" class="form-control" data-inputmask='"mask": "<?= $sPhoneFormat ?>"' data-mask>
                         <br><input type="checkbox" name="NoFormat_HomePhone"
                                    value="1" <?php if ($bNoFormat_HomePhone) echo " checked"; ?>><?= gettext("Do not auto-format") ?>
                     </div>
@@ -923,7 +924,7 @@ require "Include/Header.php";
                         </div>
                         <input type="text" name="CellPhone"
                                value="<?= htmlentities(stripslashes($sCellPhone), ENT_NOQUOTES, "UTF-8") ?>" size="30"
-                               maxlength="30" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                               maxlength="30" class="form-control" data-inputmask='"mask": "<?= $sPhoneFormat ?>"' data-mask>
                         <br><input type="checkbox" name="NoFormat_CellPhone"
                                    value="1" <?php if ($bNoFormat_CellPhone) echo " checked"; ?>><?= gettext("Do not auto-format") ?>
                     </div>
@@ -983,8 +984,8 @@ require "Include/Header.php";
                                 <i class="fa fa-calendar"></i>
                             </div>
                             <input type="text" name="FriendDate" class="form-control inputDatePicker date-picker"
-                                   value="<?= $dFriendDate ?>" maxlength="10" id="sel2" size="11"
-                                   placeholder="YYYY-MM-DD">
+                                   value="<?= localizeDate($dFriendDate, substr($sLanguage,0,2)) ?>" maxlength="10" id="sel2" size="11"
+                                   placeholder="<?= _($sDateFormatLong)?>">
                             <?php if ($sFriendDateError) { ?><font
                                 color="red"><?php echo $sFriendDateError ?></font><?php } ?>
                         </div>
@@ -997,8 +998,8 @@ require "Include/Header.php";
                             <i class="fa fa-calendar"></i>
                         </div>
                         <input type="text" name="MembershipDate" class="form-control inputDatePicker date-picker"
-                               value="<?= $dMembershipDate ?>" maxlength="10" id="sel1" size="11"
-                               placeholder="YYYY-MM-DD">
+                               value="<?= localizeDate($dMembershipDate, substr($sLanguage,0,2)) ?>" maxlength="10" id="sel1" size="11"
+                               placeholder="<?= _($sDateFormatLong)?>">
                         <?php if ($sMembershipDateError) { ?><font
                             color="red"><?= $sMembershipDateError ?></font><?php } ?>
                     </div>
@@ -1066,9 +1067,11 @@ require "Include/Header.php";
            } ?>';">
 </form>
 
+
 <script type="text/javascript">
 	$(function() {
 		$("[data-mask]").inputmask();
+		$('.inputDatePicker').datepicker({format:'<?=_($sDateFormatLong)?>',language :'<?= substr($sLanguage,0,2)?>'});
 	});
 </script>
 
